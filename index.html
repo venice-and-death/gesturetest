@@ -1,18 +1,67 @@
 <!DOCTYPE html>
+
 <html>
-  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  <!-- we import arjs version without NFT but with marker + location based support -->
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  
-  <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs>
-      <a-marker type="pattern" url="https://venice-and-death.github.io/imagemarkers/violence/pattern-violence.patt">
+  <head>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <title>Gesture Interactions - A-Frame & AR.js</title>
+=======
+    <title>Gesture tests</title>
+>>>>>>> 5ec4eb8f5fb15b677c955b0f98e47bc5065ea3cf
+=======
+    <title>Gesture tests</title>
+>>>>>>> 5ec4eb8f5fb15b677c955b0f98e47bc5065ea3cf
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+>>>>>>> 5ec4eb8f5fb15b677c955b0f98e47bc5065ea3cf
+=======
+    <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+>>>>>>> 5ec4eb8f5fb15b677c955b0f98e47bc5065ea3cf
+  </head>
+
+  <body>
+    <a-scene
+      arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <a-assets>
+        <a-asset-item
+          id="bowser"
+          src="https://cdn.glitch.com/06bd98b4-97ee-4c07-a546-fe39ca205034%2Fbowser.glb"
+        >
+        </a-asset-item>
+      </a-assets>
+
+      <a-marker
+        preset="hiro"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA"
+      >
         <a-entity
+          id="bowser-model"
+          gltf-model="#bowser"
           position="0 0 0"
-          scale="0.000005 0.000005 0.000005"
-          obj-model="obj: url(https://venice-and-death.github.io/objectmodels/violence ponte neighbourhood for ar.obj); 
-            mtl: url(https://venice-and-death.github.io/objectmodels/violence ponte neighbourhood for ar.mtl)"
-        ></a-entity>
+          scale="0.05 0.05 0.05"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
